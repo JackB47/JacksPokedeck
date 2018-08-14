@@ -54,7 +54,8 @@ function getPokemon (pokemon) {
         Pokemon.stats.forEach((s) => {
             const name = s.stat.name;
             $('.card-stats').append(`
-                <li>${name}:${s.base_stat}</li>
+                <li>${name}:  
+                <span class="base_stats">${s.base_stat}</span></li>
 
             `)
             console.log(s);
@@ -65,6 +66,12 @@ function getPokemon (pokemon) {
     
         if(err.status === 404) {
             console.log("Pokemon Not Found");
+            $('.card-generic-info').html(`
+            <div class="error">
+                <h1>POKÉMON NOT FOUND</h1>
+                <p class="error_message">Please Enter a Valid Pokémon</p>
+            </div>
+            `);
         }
     })
     .always(function() {
