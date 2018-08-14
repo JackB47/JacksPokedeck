@@ -54,7 +54,8 @@ function getPokemon (pokemon) {
         Pokemon.stats.forEach((s) => {
             const name = s.stat.name;
             $('.card-stats').append(`
-                <li>${name}:</li>
+                <li>${name}:${s.base_stat}</li>
+
             `)
             console.log(s);
         })

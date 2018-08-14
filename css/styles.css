@@ -66,12 +66,13 @@ body {
     color: darkgray;   
     text-transform: capitalize;
     font-size: 1.5rem;
-    
+      
 }
 .card__heading {
     font-size: 2rem;
     color: #DC3838;
     font-weight: bold;
+    
 }
 .card__heading .card__name {
     color: grey;    
