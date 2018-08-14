@@ -7,15 +7,16 @@ $("#search_form").submit(function(event) {
 
 function getPokemon (pokemon) {
     const url = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
-    console.log("Calling...");
+    console.log("Calling ye olde API...");
 
     $.get(url, function(data) {
-        const props = { name, height, weight, stats } = data;
+        const props = { name, height, weight, stats, sprites } = data;
         const Pokemon = {
             name,
             height,
             weight,
             stats,
+            image: sprites.front_default,
         };
 
         // TODO: Write this data to the HTML
@@ -26,7 +27,37 @@ function getPokemon (pokemon) {
          *  </div>
          * `);
          */
+        $('.card-generic-info').html(`
+            <div class="card">
+                <h1 class="card__heading">
+                    Pokémon Name:   
+                    <span class="card__name">${Pokemon.name}</span>
+                </h1>
+                <img class="card__image" src="${Pokemon.image}" alt="Picture of ${Pokemon.name}" />
+                <p class="card__height">
+                    Height:
+                    <span class="card__dataH">${Pokemon.height}</span>
+                </p>
+                <p class="card__weight">
+                    Weight:
+                    <span class="card__dataW">${Pokemon.weight}</span>
+                </p>
+                <p class="card__stats">
+                    Stats:
+                </p>
+            </div>
+        `);
 
+        $('.card-stats').html('');
+
+        // Now get the stats and write to the stats list
+        Pokemon.stats.forEach((s) => {
+            const name = s.stat.name;
+            $('.card-stats').append(`
+                <li>${name}:</li>
+            `)
+            console.log(s);
+        })
     })
     .fail(function(err) {
         console.log(err);
@@ -36,6 +67,6 @@ function getPokemon (pokemon) {
         }
     })
     .always(function() {
-        console.log("Finished");
+        console.log("Finished Calling!");
     });
 }
