@@ -1,7 +1,8 @@
 body {
     background-color: white;
-
+    font-family: "Helvetica Neue", "Trebuchet MS";
 }
+
 .searchbar {
     background-color: lightgray;
     box-sizing: border-box;
@@ -55,14 +56,63 @@ body {
 
 }
 
-
-
-
 .banner {
     background-color: lightgrey;
     padding: 150px;
     position: relative;
 }
+.card {
+    padding: 2rem;
+    color: darkgray;   
+    text-transform: capitalize;
+    font-size: 1.5rem;
+      
+}
+.card__heading {
+    font-size: 2rem;
+    color: #DC3838;
+    font-weight: bold;
+    
+}
+.card__heading .card__name {
+    color: grey;    
+    font-weight: lighter;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+.card__height {
+    color: grey;
+    font-weight: 500;
+}
+.card__height .card__dataH {
+    font-weight: 300;
+    margin-left: 0.5rem;
+}
+.card__weight {
+    color: grey;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.card__weight .card__dataW {
+    font-weight: 300;
+    margin-left: 0.5rem;
+
+}
+.card__stats {
+    color: grey;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.card-stats {
+    margin-left: 4rem;
+    color: grey;
+}
+.card__image {
+    height: 300px;
+    width: 300px;
+}
+
+
 
 .grid {
     display: grid;
@@ -74,77 +124,4 @@ body {
     grid-template-rows: repeat(6, 2fr); 
     grid-template-columns: 1fr 1fr 1.5fr 2fr;
 
-}
-.Label_Name {
-    
-    color: #DC3838;
-    font-family: "Helvetica Neue", "Trebuchet MS";
-    font-size: 2.5em;
-    padding: 50px;
-    margin-left: 80px;
-    grid-column: 1 /span 2;
-}
-.Poke_Name {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-family: "Helvetica Neue", "Trebuchet MS";
-    font-size: 32px;
-    color: grey;
-}
-
-.Label_Height {
-    color: grey;
-    font-family: "Helvetica Neue", "Trebuchet MS";
-    font-size: 24px;
-    font-weight: 500;
-    padding: 20px;
-    float: right;
-    
-}
-.Poke_Height {
-    margin-top: 25px;
-    font-size: 20px;
-    color: grey;
-    font-family: "Helvetica Neue", "Trebuchet MS";  
-}
-
-.Label_Weight {
-    color: grey;
-    font-family: "Helvetica Neue", "Trebuchet MS";
-    font-size: 24px;
-    font-weight: 500;
-    padding: 20px;
-    float: right;
-
-}
-.Poke_Weight {
-    margin-top: 25px;
-    font-size: 20px;
-    color: grey;
-    font-family: "Helvetica Neue", "Trebuchet MS";
-}
-.Poke_Picture {
-    grid-row: span 3;
-}
-
-.Label_Stats {
-    color: grey;
-    font-family: "Helvetica Neue", "Trebuchet MS";
-    font-size: 24px;
-    font-weight: 500;
-    padding: 20px;
-    float: right;
-    grid-column: 1 /span 2; 
-
-
-}
-.Poke_Stats {
-    color: grey;
-    font-family: "Helvetica Neue", "Trebuchet MS";
-    font-size: 20px;
-    
-    
 }
